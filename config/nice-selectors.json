@@ -1,0 +1,420 @@
+{
+  "loginSignals": [
+    {
+      "text": "기본 메뉴"
+    },
+    {
+      "selector": ".cl-navigationbar-text"
+    }
+  ],
+  "pageReadySignals": [
+    {
+      "text": "출결관리"
+    },
+    {
+      "selector": ".process-stepper"
+    },
+    {
+      "selector": ".cl-grid[role='grid']"
+    }
+  ],
+  "grid": {
+    "candidates": [
+      {
+        "selector": ".cl-grid[role='grid']"
+      },
+      {
+        "selector": ".cl-control.cl-grid"
+      }
+    ],
+    "verticalScrollStepPx": 216,
+    "scrollSettleMs": 450,
+    "maxScrollAttempts": 30,
+    "resetWheelPx": 1200,
+    "resetAttempts": 8,
+    "resetBeforeProcessing": true
+  },
+  "navigationSteps": [
+    {
+      "name": "학급담임",
+      "candidates": [
+        {
+          "text": "학급담임"
+        },
+        {
+          "role": "link",
+          "name": "학급담임"
+        },
+        {
+          "selector": "a[role='link']:has-text('학급담임'), .cl-navigationbar-text:has-text('학급담임')"
+        }
+      ],
+      "successSignals": [
+        {
+          "text": "출결관리"
+        }
+      ]
+    },
+    {
+      "name": "출결관리 2단계",
+      "candidates": [
+        {
+          "text": "출결관리 2단계 메뉴항목"
+        },
+        {
+          "selector": "a[title='출결관리']"
+        },
+        {
+          "selector": ".cl-text:has-text('출결관리 2단계 메뉴항목')"
+        }
+      ],
+      "successSignals": [
+        {
+          "text": "출결관리 3단계"
+        }
+      ]
+    },
+    {
+      "name": "출결관리 3단계",
+      "candidates": [
+        {
+          "text": "출결관리 3단계"
+        },
+        {
+          "selector": "a[title='출결관리']"
+        },
+        {
+          "selector": ".cl-text:has-text('출결관리 3단계')"
+        }
+      ],
+      "successSignals": [
+        {
+          "text": "일일출결관리"
+        },
+        {
+          "selector": ".process-stepper"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "name": "학년",
+      "key": "grade",
+      "candidates": [
+        {
+          "selector": ".search-box .cl-combobox:has-text('4')"
+        },
+        {
+          "selector": ".label.require:has-text('학년')"
+        },
+        {
+          "text": "학년"
+        }
+      ]
+    },
+    {
+      "name": "반",
+      "key": "classroom",
+      "candidates": [
+        {
+          "selector": ".search-box .cl-combobox:has-text('3')"
+        },
+        {
+          "selector": ".label.require:has-text('반')"
+        },
+        {
+          "text": "반"
+        }
+      ]
+    },
+    {
+      "name": "월",
+      "key": "targetMonth",
+      "candidates": [
+        {
+          "selector": ".search-box .cl-combobox:has-text('3월')"
+        },
+        {
+          "selector": ".label.require:has-text('월')"
+        },
+        {
+          "text": "월"
+        }
+      ]
+    }
+  ],
+  "actions": {
+    "search": [
+      {
+        "text": "조회"
+      },
+      {
+        "role": "button",
+        "name": "조회"
+      },
+      {
+        "selector": "div[aria-label='조회']"
+      },
+      {
+        "selector": ".search-box .cl-container:has-text('조회')"
+      }
+    ],
+    "save": [
+      {
+        "text": "저장"
+      },
+      {
+        "role": "button",
+        "name": "저장"
+      },
+      {
+        "selector": "div[aria-label='저장'], .cl-button:has-text('저장')"
+      }
+    ]
+  },
+  "dialog": {
+    "timeoutMs": 10000,
+    "openSignals": [
+      {
+        "text": "일일출결입력"
+      },
+      {
+        "selector": ".cl-dialog[role='dialog']"
+      },
+      {
+        "selector": "[role='dialog']"
+      }
+    ],
+    "modeCandidates": {
+      "daily": [
+        {
+          "text": "일일출결입력"
+        },
+        {
+          "selector": ".cl-dialog [role='link']:has-text('일일출결입력'), .cl-dialog .cl-button:has-text('일일출결입력')"
+        }
+      ],
+      "continuous": [
+        {
+          "text": "연속출결입력"
+        },
+        {
+          "selector": ".cl-dialog [role='link']:has-text('연속출결입력'), .cl-dialog .cl-button:has-text('연속출결입력')"
+        }
+      ]
+    },
+    "modeSwitchSignals": {
+      "continuous": [
+        {
+          "text": "필수입력 기간"
+        }
+      ]
+    },
+    "continuousRangeSignals": [
+      {
+        "text": "필수입력 기간"
+      }
+    ],
+    "typeCandidates": {
+      "질병": [
+        {
+          "selector": ".cl-dialog .cl-control:has-text('질병♡')",
+          "force": true
+        },
+        {
+          "text": "질병♡",
+          "force": true
+        },
+        {
+          "text": "질병",
+          "force": true
+        }
+      ],
+      "미인정": [
+        {
+          "selector": ".cl-dialog .cl-control:has-text('미인정♥')",
+          "force": true
+        },
+        {
+          "text": "미인정♥",
+          "force": true
+        },
+        {
+          "text": "미인정",
+          "force": true
+        }
+      ],
+      "기타": [
+        {
+          "selector": ".cl-dialog .cl-control:has-text('기타▲')",
+          "force": true
+        },
+        {
+          "text": "기타▲",
+          "force": true
+        },
+        {
+          "text": "기타",
+          "force": true
+        }
+      ],
+      "출석인정": [
+        {
+          "selector": ".cl-dialog .cl-control:has-text('출석인정△')",
+          "force": true
+        },
+        {
+          "text": "출석인정△",
+          "force": true
+        },
+        {
+          "text": "출석인정",
+          "force": true
+        }
+      ]
+    },
+    "reasonField": {
+      "candidates": [
+        {
+          "selector": ".cl-dialog textarea"
+        },
+        {
+          "selector": ".cl-dialog input[aria-label*='사유'], .cl-dialog input[title*='사유']"
+        },
+        {
+          "selector": ".cl-dialog input"
+        }
+      ]
+    },
+    "periodFields": {
+      "start": {
+        "candidates": [
+          {
+            "selector": ".cl-dialog input[aria-label='시작기간']"
+          },
+          {
+            "selector": ".cl-dialog input[aria-label*='시작']"
+          }
+        ]
+      },
+      "end": {
+        "candidates": [
+          {
+            "selector": ".cl-dialog input[aria-label='종료기간']"
+          },
+          {
+            "selector": ".cl-dialog input[aria-label*='종료']"
+          }
+        ]
+      }
+    },
+    "actions": {
+      "save": [
+        {
+          "selector": ".cl-dialog div[aria-label='저장'], .cl-dialog .cl-button:has-text('저장')",
+          "force": true
+        },
+        {
+          "text": "저장",
+          "force": true
+        }
+      ],
+      "close": [
+        {
+          "text": "닫기"
+        },
+        {
+          "selector": ".cl-dialog div[aria-label='닫기'], .cl-dialog .cl-button:has-text('닫기')"
+        }
+      ]
+    }
+  },
+  "searchResultsSignals": [
+    {
+      "text": "4학년 3반"
+    },
+    {
+      "selector": ".cl-grid[role='grid']"
+    },
+    {
+      "text": "번호 성명"
+    }
+  ],
+  "contextAssertions": [
+    {
+      "key": "classSummary",
+      "expectedFrom": "jobConfig",
+      "candidates": [
+        {
+          "text": "${value}"
+        },
+        {
+          "selector": ".cl-output:has-text('${value}')"
+        }
+      ]
+    },
+    {
+      "key": "targetMonthLabel",
+      "expectedFrom": "jobConfig",
+      "candidates": [
+        {
+          "text": "${value}"
+        },
+        {
+          "selector": ".h3:has-text('${value}'), .cl-output:has-text('${value}')"
+        }
+      ]
+    }
+  ],
+  "studentList": {
+    "virtualized": true,
+    "nameCells": {
+      "candidates": [
+        {
+          "selector": ".cl-grid[role='grid'] .cl-grid-row[role='row'] .cl-grid-cell[role='gridcell'][aria-label*='성명']"
+        },
+        {
+          "selector": ".cl-grid-row[role='row'] .cl-grid-cell[aria-label*='성명']"
+        }
+      ],
+      "extractSelector": ".cl-grid[role='grid'] .cl-grid-row[role='row'] .cl-grid-cell[role='gridcell'][aria-label*='성명']",
+      "extractor": "ariaLabelRegex",
+      "ariaLabelPattern": "성명\\s+(?<name>[^\\s]+)"
+    }
+  },
+  "attendanceRows": {
+    "rowCandidates": [
+      {
+        "selector": ".cl-grid-row[role='row']:has(.cl-grid-cell[role='gridcell'][aria-label*='성명 ${name}'])"
+      },
+      {
+        "selector": ".cl-grid-row[role='row']:has-text('${name}')"
+      },
+      {
+        "text": "${name}"
+      }
+    ],
+    "fields": {
+      "status": {
+        "action": "clickCellByDay",
+        "selectorTemplate": ".cl-grid-cell[role='gridcell'][aria-label*='${day}일'][aria-label*='편집창']",
+        "force": true,
+        "fallbackCandidates": [
+          {
+            "selector": ".cl-grid-cell[role='gridcell'][title*='${year}.${monthPadded}.${day}.'][title*='${name}']",
+            "force": true
+          }
+        ]
+      }
+    }
+  },
+  "successSignals": [
+    {
+      "text": "저장되었습니다"
+    },
+    {
+      "selector": ".cl-dialog, .toast-message, [role='alertdialog']"
+    }
+  ]
+}

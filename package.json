@@ -1,0 +1,25 @@
+{
+  "name": "nice-attendance-automation",
+  "version": "0.1.0",
+  "description": "Playwright-based NICE attendance automation attached to a logged-in browser session.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "inspect": "node src/index.js --mode inspect",
+    "confirm-test": "node src/index.js --mode confirm-test",
+    "radio-test": "node src/index.js --mode radio-test --type 질병",
+    "test": "node --test"
+  },
+  "keywords": [
+    "playwright",
+    "nice",
+    "attendance",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}

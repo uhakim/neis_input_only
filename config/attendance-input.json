@@ -1,0 +1,27 @@
+{
+  "students": [
+    {
+      "name": "김태이",
+      "values": {
+        "status": {
+          "mode": "daily",
+          "targetDate": "2026.03.03.",
+          "type": "질병",
+          "reason": "병원 진료"
+        }
+      }
+    },
+    {
+      "name": "김태이",
+      "values": {
+        "status": {
+          "mode": "continuous",
+          "startDate": "2026.03.05.",
+          "endDate": "2026.03.06.",
+          "type": "미인정",
+          "reason": "가정 사정"
+        }
+      }
+    }
+  ]
+}

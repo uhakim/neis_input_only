@@ -1,0 +1,22 @@
+{
+  "browserName": "chrome",
+  "host": "127.0.0.1",
+  "port": 9222,
+  "preferredUrlIncludes": [
+    "pen.neis.go.kr/jsp/main.jsp",
+    "pen.neis.go.kr"
+  ],
+  "urlIncludes": [
+    "pen.neis.go.kr",
+    "neis.go.kr"
+  ],
+  "excludeUrlIncludes": [
+    "about:blank",
+    "chrome://",
+    "edge://",
+    "newtab"
+  ],
+  "titleIncludes": [
+    "NEIS"
+  ]
+}
